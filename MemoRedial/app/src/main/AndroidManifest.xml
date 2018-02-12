@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ContactsActivity" />
-        <activity android:name=".MainDialActivity"></activity>
+        <activity android:name=".MainDialActivity" />
+        <activity android:name=".DialerActivity"></activity>
     </application>
 
 </manifest>
