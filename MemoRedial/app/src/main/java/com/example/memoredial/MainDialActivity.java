@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class MainDialActivity extends AppCompatActivity {
 
     String DCVN = "DialContactViewingNumber";
+    String DCFM = "DialContactFromMemory";
     PhoneNumberHelper phoneNum;
     TextView numberText;
     String targetNumber;
@@ -30,6 +31,8 @@ public class MainDialActivity extends AppCompatActivity {
 
         if (mode.equals(DCVN)) {
             setTitle(name + " - " + PhoneNumberHelper.toString(targetNumber));
+        } else if (mode.equals(DCFM)) {
+            setTitle(name);
         }
     }
 
@@ -59,19 +62,17 @@ public class MainDialActivity extends AppCompatActivity {
     }
 
     public void clickAction(View v) {
-        if (mode.equals(DCVN)) {
+        //if (mode.equals(DCVN)) {
             if (phoneNum.Length()==10) {
                 if (phoneNum.matches(targetNumber)) {
                     popUpMessage("Correct!");
                 } else {
                     popUpMessage("Incorrect!");
                 }
-
-
             } else {
                 popUpMessage("Incomplete number--try again!");
             }
-        }
+        //}
     }
 
     public void clickBack(View v) {

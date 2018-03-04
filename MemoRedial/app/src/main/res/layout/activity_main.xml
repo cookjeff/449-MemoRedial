@@ -7,17 +7,36 @@
     tools:context="com.example.memoredial.MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonDCVN"
         android:layout_width="314dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="35dp"
+        android:layout_height="66dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="52dp"
         android:onClick="dialContactViewingNumber"
-        android:text="Dial Contact, Viewing Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="Dial Contact Viewing Number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDCFM"
+        android:layout_width="314dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="13dp"
+        android:onClick="dialContactFromMemory"
+        android:text="Dial Contact From Memory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDCVN" />
+
+    <Button
+        android:id="@+id/buttonQOAC"
+        android:layout_width="314dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="12dp"
+        android:onClick="quizOnAllContacts"
+        android:text="Quiz On All Contacts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDCFM" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,28 +1,80 @@
 package com.example.memoredial;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
 
 public class MultiQuizDialerActivity extends AppCompatActivity {
 
     PhoneNumberHelper phoneNum;
     TextView numberText;
+    String number;
+    String name;
+    boolean autosubmit = false;
+    Button autosubmitButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_dial);
+        setContentView(R.layout.activity_quiz_dial);
         phoneNum = new PhoneNumberHelper();
         numberText = findViewById(R.id.numberText);
+        autosubmitButton = findViewById(R.id.autosubmitButton);
+        //Bundle bundle = getIntent().getExtras();
+        //targetNumber = bundle.getString("NUMBER");
+        autosubmitButton.setText("Autosubmit\nOff");
+        setupQuizRound();
+
+
+    }
+
+    protected void popUpMessage(String msg) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage(msg);
+        dialog.setPositiveButton("OK",null);
+        dialog.show();
+    }
+
+    public void toggleAutosubmit(View v) {
+        if (autosubmit) {
+            autosubmit = false;
+            autosubmitButton.setText("Autosubmit\nOff");
+        } else {
+            autosubmit = true;
+            autosubmitButton.setText("Autosubmit\nOn");
+        }
+    }
+
+    public void setupQuizRound() {
+        name = ContactsHelper.getRandom();
+        number = ContactsHelper.getNumber(name);
+        numberText.setText("");
+        setTitle(name);
     }
 
     private void updateNumber() {
         numberText.setText(phoneNum.toString());
+        // Autosubmit functionality
+        if (phoneNum.Length()==10 && autosubmit)
+            clickAction(null);
     }
 
     public void clickAction(View v) {
+        if (phoneNum.Length()==10) {
+            if (phoneNum.matches(number)) {
+                popUpMessage("Correct!");
+                setupQuizRound();
+            } else {
+                popUpMessage("Incorrect!");
+            }
 
+
+        } else {
+            popUpMessage("Incomplete number--try again!");
+        }
     }
 
     public void clickBack(View v) {

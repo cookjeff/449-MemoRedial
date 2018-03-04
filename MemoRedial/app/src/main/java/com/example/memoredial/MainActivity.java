@@ -22,4 +22,15 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("MODE","DialContactViewingNumber");
         startActivity(intent);
     }
+
+    public void dialContactFromMemory(View v) {
+        Intent intent = new Intent(this, ContactsActivity.class);
+        intent.putExtra("MODE","DialContactFromMemory");
+        startActivity(intent);
+    }
+
+    public void quizOnAllContacts(View v) {
+        Intent intent = new Intent(this, MultiQuizDialerActivity.class);
+        startActivity(intent);
+    }
 }

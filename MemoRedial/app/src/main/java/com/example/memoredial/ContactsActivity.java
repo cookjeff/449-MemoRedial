@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class ContactsActivity extends AppCompatActivity {
 
-    Button button1;
+    Button button1, button2, button3, button4;
     String mode;
 
     @Override
@@ -19,7 +19,9 @@ public class ContactsActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         mode = bundle.getString("MODE");
         button1 = (Button)findViewById(R.id.contactButton1);
-
+        button2 = (Button)findViewById(R.id.contactButton2);
+        button3 = (Button)findViewById(R.id.contactButton3);
+        button4 = (Button)findViewById(R.id.contactButton4);
 
     }
 
@@ -35,10 +37,23 @@ public class ContactsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void contactButton1Click(View v) {
-        String name = button1.getText().toString();
-        String number = ContactsHelper.getNumber(name);
-
-        goToDialer(name,number);
+    public void contactButtonClick(View v) {
+        String name = "", number;
+        switch (v.getId()) {
+            case R.id.contactButton1:
+                name = button1.getText().toString();
+                break;
+            case R.id.contactButton2:
+                name = button2.getText().toString();
+                break;
+            case R.id.contactButton3:
+                name = button3.getText().toString();
+                break;
+            case R.id.contactButton4:
+                name = button4.getText().toString();
+                break;
+        }
+        number = ContactsHelper.getNumber(name);
+        goToDialer(name, number);
     }
 }

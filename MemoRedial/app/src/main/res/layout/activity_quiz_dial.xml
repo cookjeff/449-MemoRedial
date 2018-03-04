@@ -143,24 +143,24 @@
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="106dp"
-        android:layout_height="54dp"
+        android:layout_width="102dp"
+        android:layout_height="64dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:onClick="clickAction"
+        android:layout_marginTop="20dp"
+        android:onClick="toggleAutosubmit"
         android:text="Submit"
         app:layout_constraintStart_toEndOf="@+id/button0"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <Button
-        android:id="@+id/buttonCall"
-        android:layout_width="105dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="9dp"
-        android:onClick="clickCall"
-        android:text="CALL"
-        app:layout_constraintStart_toEndOf="@+id/button0"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSubmit" />
+        android:id="@+id/autosubmitButton"
+        android:layout_width="118dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:onClick="toggleAutosubmit"
+        android:text="Autosubmit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
 </android.support.constraint.ConstraintLayout>
