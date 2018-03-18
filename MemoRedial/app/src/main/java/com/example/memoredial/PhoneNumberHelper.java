@@ -26,6 +26,10 @@ public class PhoneNumberHelper {
         return number;
     }
 
+    public void Reset() {
+        this.number = "";
+    }
+
     public String toSimpleString() {
         return number;
     }

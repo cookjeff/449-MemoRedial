@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class MainDialActivity extends AppCompatActivity {
 
-    String DCVN = "DialContactViewingNumber";
-    String DCFM = "DialContactFromMemory";
+    final String DCVN = "DialContactViewingNumber";
+    final String DCFM = "DialContactFromMemory";
     PhoneNumberHelper phoneNum;
     TextView numberText;
     String targetNumber;

@@ -17,20 +17,37 @@ public class MainActivity extends AppCompatActivity {
         contactsHelper.start();
     }
 
-    public void dialContactViewingNumber(View v) {
+    public void clickDialContactViewingNumber(View v) {
         Intent intent = new Intent(this, ContactsActivity.class);
         intent.putExtra("MODE","DialContactViewingNumber");
         startActivity(intent);
     }
 
-    public void dialContactFromMemory(View v) {
+    public void clickDialContactFromMemory(View v) {
         Intent intent = new Intent(this, ContactsActivity.class);
         intent.putExtra("MODE","DialContactFromMemory");
         startActivity(intent);
     }
 
-    public void quizOnAllContacts(View v) {
+    public void clickQuizOnAllContacts(View v) {
         Intent intent = new Intent(this, MultiQuizDialerActivity.class);
+        intent.putExtra("MODE","QuizOnAllContacts");
+        startActivity(intent);
+    }
+
+    public void clickPracticeOnAllContacts(View v) {
+        Intent intent = new Intent(this, MultiQuizDialerActivity.class);
+        intent.putExtra("MODE","PracticeOnAllContacts");
+        startActivity(intent);
+    }
+
+    public void clickQuizByNumber(View v) {
+        Intent intent = new Intent(this, QuizByNumberActivity.class);
+        startActivity(intent);
+    }
+
+    public void clickAddContact(View v) {
+        Intent intent = new Intent(this, ManageContactsActivity.class);
         startActivity(intent);
     }
 }

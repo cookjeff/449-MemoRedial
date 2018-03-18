@@ -142,7 +142,7 @@
         app:layout_constraintTop_toBottomOf="@+id/numberText" />
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/buttonSave"
         android:layout_width="106dp"
         android:layout_height="54dp"
         android:layout_marginStart="20dp"
@@ -161,6 +161,6 @@
         android:onClick="clickCall"
         android:text="CALL"
         app:layout_constraintStart_toEndOf="@+id/button0"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSubmit" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
 
 </android.support.constraint.ConstraintLayout>

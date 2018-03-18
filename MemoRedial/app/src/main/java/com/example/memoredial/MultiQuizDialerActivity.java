@@ -10,10 +10,15 @@ import android.widget.TextView;
 
 public class MultiQuizDialerActivity extends AppCompatActivity {
 
+    final String POAC = "PracticeOnAllContacts";
+    final String QOAC = "QuizOnAllContacts";
+
     PhoneNumberHelper phoneNum;
     TextView numberText;
     String number;
     String name;
+    String mode;
+    String previousName;
     boolean autosubmit = false;
     Button autosubmitButton;
     @Override
@@ -21,12 +26,18 @@ public class MultiQuizDialerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_dial);
         phoneNum = new PhoneNumberHelper();
+
+        Bundle bundle = getIntent().getExtras();
+        mode = bundle.getString("MODE");
+
         numberText = findViewById(R.id.numberText);
         autosubmitButton = findViewById(R.id.autosubmitButton);
         //Bundle bundle = getIntent().getExtras();
         //targetNumber = bundle.getString("NUMBER");
         autosubmitButton.setText("Autosubmit\nOff");
         setupQuizRound();
+
+
 
 
     }
@@ -38,7 +49,7 @@ public class MultiQuizDialerActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void toggleAutosubmit(View v) {
+    public void clickToggleAutosubmit(View v) {
         if (autosubmit) {
             autosubmit = false;
             autosubmitButton.setText("Autosubmit\nOff");
@@ -50,9 +61,15 @@ public class MultiQuizDialerActivity extends AppCompatActivity {
 
     public void setupQuizRound() {
         name = ContactsHelper.getRandom();
+
         number = ContactsHelper.getNumber(name);
+        phoneNum.Reset();
         numberText.setText("");
-        setTitle(name);
+        if (mode.equals(POAC)) {
+            setTitle(name + " - " + number);
+        } else {
+            setTitle(name);
+        }
     }
 
     private void updateNumber() {

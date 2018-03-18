@@ -30,4 +30,8 @@ public class ContactsHelper {
         int size = contacts.keySet().size();
         return (String)contacts.keySet().toArray()[random.nextInt(size)];
     }
+
+    static int getNumContacts() {
+        return contacts.size();
+    }
 }

@@ -10,9 +10,9 @@
         android:id="@+id/buttonDCVN"
         android:layout_width="314dp"
         android:layout_height="66dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="52dp"
-        android:onClick="dialContactViewingNumber"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:onClick="clickDialContactViewingNumber"
         android:text="Dial Contact Viewing Number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,9 +21,9 @@
         android:id="@+id/buttonDCFM"
         android:layout_width="314dp"
         android:layout_height="66dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="13dp"
-        android:onClick="dialContactFromMemory"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickDialContactFromMemory"
         android:text="Dial Contact From Memory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDCVN" />
@@ -32,11 +32,44 @@
         android:id="@+id/buttonQOAC"
         android:layout_width="314dp"
         android:layout_height="66dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="12dp"
-        android:onClick="quizOnAllContacts"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickQuizOnAllContacts"
         android:text="Quiz On All Contacts"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPracticeOnAll" />
+
+    <Button
+        android:id="@+id/buttonPracticeOnAll"
+        android:layout_width="314dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickPracticeOnAllContacts"
+        android:text="Practice On All Contacts"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDCFM" />
+
+    <Button
+        android:id="@+id/buttonQuizByNumber"
+        android:layout_width="314dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickQuizByNumber"
+        android:text="Quiz By Number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonQOAC" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="314dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:onClick="clickAddContact"
+        android:text="Add Contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonQuizByNumber" />
 
 </android.support.constraint.ConstraintLayout>
